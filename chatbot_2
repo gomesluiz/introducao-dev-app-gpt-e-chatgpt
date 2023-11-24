@@ -42,7 +42,7 @@ print("Ei! Bem-vindo à nossa pizzaria. Como posso te ajudar você hoje? ")
 while prompt != "":
     prompt = input(": ")
     if prompt != "":
-        contexto.appeMnd({'role':'user', 'content':f"{prompt}"})
+        contexto.append({'role':'user', 'content':f"{prompt}"})
         response = get_completion_from_messages(api_key, contexto) 
         print(f"Assistente: {response}")
         contexto.append({'role':'assistant', 'content':f"{response}"})
